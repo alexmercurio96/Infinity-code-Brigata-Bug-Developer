@@ -20,3 +20,8 @@ Route::get('/category/{category}', [PublicController::class, 'categoryShow'])->n
 
 Route::get('/create/announcement', [AnnouncementController::class, 'createAnnouncement'])->name('announcements.create');
 
+Route::get('/detail/announcement/{announcement}', [AnnouncementController::class,'showAnnouncement'])->name ('announcements.show');
+
+Route::get('/all/announcement/', [AnnouncementController::class,'indexAnnouncement'])->name ('announcements.index');
+
+

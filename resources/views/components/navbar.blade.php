@@ -9,10 +9,11 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Home</a>
           </li>
-      
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">Tutti gli Annunci</a>
+          </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" data-bs-toggle="dropdown" aria-expanded="false" role="button">Categorie</a>
-            
             <ul  class="dropdown-menu" aria-lbavelledby="catagriesDropdown">
               @foreach ($categories as $category)
               <li> <a class="dropdown-item" href="{{route('categoryShow', compact('category'))}}">{{($category->name)}}</a></li> 

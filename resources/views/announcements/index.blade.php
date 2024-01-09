@@ -30,7 +30,7 @@
                   </div>
             </div>
             @endforeach
-            {{$announcements->links}}
+            {{$announcements->links()}}
         </div>
       </div>
    

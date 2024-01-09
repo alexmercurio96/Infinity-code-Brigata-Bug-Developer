@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 
 
@@ -24,8 +25,8 @@ class AnnouncementController extends Controller
 
     public function indexAnnouncement()
     {
-        $announcement = Announcement::paginate(10);
-        return view('announcements.index', compact ('announcement'));
+        $announcements = Announcement::orderby('created_at','desc')->paginate(10);
+        return view('announcements.index', compact ('announcements'));
     }
 }
 

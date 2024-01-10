@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use App\Mail\BecomeRevisorEmail;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Artisan;
 
 class RevisorController extends Controller
 {
@@ -22,4 +27,24 @@ class RevisorController extends Controller
         $announcement->setAccepted(false);
         return redirect()->back()->with('message','Hai rifiutato l\'annuncio');
     }
+
+
+    public function workWhitUs() {
+        return view('revisor.create');
+    }
+
+    public function becomeRevisor() {
+
+        Mail::to('admin@infinitycode.it')->send(new BecomeRevisorEmail(Auth::user()));
+        return redirect()->back()->with('message', 'La richiesta di diventare Revisore è andata a buon fine!');
+    }
+
+    public function makeRevisor(User $user){
+
+        Artisan::call('app:make-user-revisor', ["email"=>$user->email]);
+        return redirect('/')->with('message', 'Complimenti! L\'utente è diventato revisore');
+    }
+
+
+
 }

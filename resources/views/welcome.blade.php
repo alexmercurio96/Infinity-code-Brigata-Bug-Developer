@@ -10,9 +10,9 @@
     </div>
     @endif
 
-    @if (session('messagge'))
+    @if (session('message'))
     <div class="alert alert-success text-center">
-      {{ session('messagge') }}<button type="button" class="btn-close mx-2" data-bs-dismiss="alert"
+      {{ session('message') }}<button type="button" class="btn-close mx-2" data-bs-dismiss="alert"
       aria-label="Close"></button>
     </div>
     @endif

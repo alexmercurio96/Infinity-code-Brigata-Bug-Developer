@@ -33,9 +33,9 @@ class RevisorController extends Controller
         return view('revisor.create');
     }
 
-    public function becomeRevisor() {
+    public function becomeRevisor(Request $request) {
 
-        Mail::to('admin@infinitycode.it')->send(new BecomeRevisorEmail(Auth::user()));
+        Mail::to('admin@infinitycode.it')->send(new BecomeRevisorEmail(Auth::user(), $request->motivo));
         return redirect()->back()->with('message', 'La richiesta di diventare Revisore è andata a buon fine!');
     }
 

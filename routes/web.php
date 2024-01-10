@@ -34,11 +34,11 @@ Route::patch('/accept/announcement/{announcement}', [RevisorController::class,'a
 // Rifiuta annuncio
 Route::patch('/reject/announcement/{announcement}', [RevisorController::class,'rejectAnnouncement'])->middleware('isRevisor')->name ('revisor.reject_announcement');
 
-//Form Diventa Revisore
+//Form Lavora con noi
 Route::get('/create/revisor', [RevisorController::class, 'workWhitUs'])->name('revisor.create');
 
 //Richiedi di diventare revisore
-Route::get('/request/revisor', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('emails.becomeRevisor');
+Route::post('/request/revisor', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('emails.becomeRevisor');
 
 // Rendi utente revisore
 Route::get('/accept/revisor/{user}', [RevisorController::class, 'makeRevisor'])->middleware('auth')->name('make.revisor');

@@ -11,10 +11,10 @@
 
    
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
           @forelse ($announcements as $announcement)
-            <div class="col-12 col-md-6">
-                <div class="card" style="width: 18rem;">
+            <div class="col-12 col-md-6 my-5 p-4 d-flex justify-content-center">
+                <div class="card p-2 card-custom text-white" data-bs-theme="dark" style="width: 18rem;">
                     <img src="https://picsum.photos/200" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{$announcement->title}}</h5>

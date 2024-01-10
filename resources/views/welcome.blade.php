@@ -17,11 +17,28 @@
     </div>
     @endif
 
-<x-masthead
+{{-- HEADER  --}}
 
-title='WELCOME TO INFINITY CODE'
+   <header class="vh-100 position-relative">
+    <div class="container-fluid bg-video position-absolute top-0 left-0 h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12 d-flex flex-column align-items-center">
+          <h1 class="display-1 text-white " data-aos="zoom-in">WELCOME TO INFINITY CODE</h1>
+          <button class="btn-custom " type="button">
+            <a class="nav-link" href="{{route('announcements.create')}}">Inserisci Annuncio</a>
+          </button>
 
-></x-masthead>
+        </div>
+      </div>
+
+
+    </div>
+    <video autoplay muted loop id="myVideo">
+      <source src="{{Storage::url('video/video.mp4')}}" type="video/mp4">
+    </video>
+
+
+   </header>
 
 <x-card 
 

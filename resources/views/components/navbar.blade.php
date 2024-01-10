@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar nav-custom  navbar-dark bg-dark navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand" href="{{route('welcome')}}">Infinity Code</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,7 +17,7 @@
                         <ul  class="dropdown-menu" aria-lbavelledby="catagriesDropdown">
               @foreach ($categories as $category)
               <li> <a class="dropdown-item" href="{{route('categoryShow', compact('category'))}}">{{($category->name)}}</a></li> 
-            <li> <hr class="dropdown-divider"></li>
+            {{-- <li> <hr class="dropdown-divider mt-0 mb-0"></li> --}}
                @endforeach
             </ul>
           </li>

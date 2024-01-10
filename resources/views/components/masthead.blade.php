@@ -1,7 +1,7 @@
 <div class="container fluid my-5">
     <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
       <video id="video-background" preload muted autoplay loop>
-        <source src="{{Storage::url('video.mov')}}" type="">
+        <source src="{{Storage::url('video.mp4')}}" type="">
       </video>
       <h1 class="text-body-emphasis">{{$title}}</h1>
       <p class="col-lg-6 mx-auto mb-4">

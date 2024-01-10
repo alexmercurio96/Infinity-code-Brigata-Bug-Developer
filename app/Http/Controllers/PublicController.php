@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
-use App\Http\Controllers\PublicController;
+
 
 class PublicController extends Controller
 {
@@ -17,9 +17,14 @@ class PublicController extends Controller
     
 }
 
-public function categoryShow(Category $category)
+    public function categoryShow(Category $category)
     {
         return view('category.show',compact('category'));
     }
 
+    public function searchAnnouncements(Request $request)
+    {
+       $announcements=Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
+       return view('announcements.index', compact('announcements'));
+    }
 }

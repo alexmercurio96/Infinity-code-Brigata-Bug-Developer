@@ -33,3 +33,6 @@ Route::patch('/accept/announcement/{announcement}', [RevisorController::class,'a
 
 // Rifiuta annuncio
 Route::patch('/reject/announcement/{announcement}', [RevisorController::class,'rejectAnnouncement'])->name ('revisor.reject_announcement');
+
+//!Ricerca Annuncio
+Route::get('/search/announcement',[PublicController::class,'searchAnnouncements'])->name('announcements.search');

@@ -9,12 +9,12 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Home</a>
           </li>
-          <li class="nav-item">
+      <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">Tutti gli Annunci</a>
           </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" data-bs-toggle="dropdown" aria-expanded="false" role="button">Categorie</a>
-            <ul  class="dropdown-menu" aria-lbavelledby="catagriesDropdown">
+                        <ul  class="dropdown-menu" aria-lbavelledby="catagriesDropdown">
               @foreach ($categories as $category)
               <li> <a class="dropdown-item" href="{{route('categoryShow', compact('category'))}}">{{($category->name)}}</a></li> 
             <li> <hr class="dropdown-divider"></li>
@@ -35,7 +35,7 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{route('announcements.create')}}">Nuovo Annuncio</a>
           </li>
-          @if(Auth::user()->is_revisor)
+@if(Auth::user()->is_revisor)
           <li class="nav-item">
             <a class="nav-link btn btn-outline-success btn-sm position-relative" aria-current="page" href="{{route('revisor.index')}}">Zona revisore
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">

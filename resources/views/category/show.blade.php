@@ -1,7 +1,7 @@
 <x-layout>
     <x-navbar></x-navbar>
 
-    <x-masthead title='Esplora la cetegoria'> {{$category->name}}
+    <x-masthead title='Esplora la Categoria'> {{$category->name}}
     </x-masthead>
 
     <div class="container">
@@ -15,8 +15,8 @@
                       <p class="card-text">{{$announcement->body}}</p>
                       
                       <p class="card-text"></p>
-                      <a href="#" class="btn btn-primary">Visualizza</a>
-                      <a href="" class="btn my-2 border-top pt-2 border-dark card-link shadow btn btn-success">Catagoria:{{$announcement->category->name}}</a>
+                      <a href="#" class="btn btn-custom2">Visualizza</a>
+                      <a href="" class="btn my-2  card-link shadow btn btn-custom2">Catagoria:{{$announcement->category->name}}</a>
                       <p class="acrd-footer">Pubblicato il: {{$announcement->created_at->format('d/m/Y')}}
                      - Autore: {{$announcement->user->name ?? ''}}
                     </p>

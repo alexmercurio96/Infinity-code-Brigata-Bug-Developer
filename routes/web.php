@@ -35,7 +35,7 @@ Route::patch('/accept/announcement/{announcement}', [RevisorController::class,'a
 Route::patch('/reject/announcement/{announcement}', [RevisorController::class,'rejectAnnouncement'])->middleware('isRevisor')->name ('revisor.reject_announcement');
 
 //Form Lavora con noi
-Route::get('/create/revisor', [RevisorController::class, 'workWhitUs'])->name('revisor.create');
+Route::get('/create/revisor', [RevisorController::class, 'workWhitUs'])->middleware('auth')->name('revisor.create');
 
 //Richiedi di diventare revisore
 Route::post('/request/revisor', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('emails.becomeRevisor');

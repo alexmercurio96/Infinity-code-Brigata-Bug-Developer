@@ -172,3 +172,10 @@ html {
 
     background-color: #cdc3c3;
 }
+
+.img-preview{
+  height: 300px;
+  width: 300px;
+  background-repeat: no-repeat;
+ 
+}

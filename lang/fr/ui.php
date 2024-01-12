@@ -1,5 +1,5 @@
 <?php
 return[
     "announcements"=>"Toutes nos annonces",
-    "welcome"=>"Bienvenue à Infity code "
+    "welcome"=>"Bienvenue à Infinity code "
 ];

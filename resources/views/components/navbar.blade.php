@@ -12,6 +12,7 @@
       <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">Tutti gli Annunci</a>
           </li>
+         
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" data-bs-toggle="dropdown" aria-expanded="false" role="button">Categorie</a>
                         <ul  class="dropdown-menu" aria-lbavelledby="catagriesDropdown">
@@ -61,6 +62,15 @@
           </li>
           @endauth
         </ul>
+          <div class=" mx-2">
+            <x-_locale lang="it"/>
+          </div>
+          <div class="mx-2">
+            <x-_locale  lang="en"/>
+          </div>
+          <div class="mx-2">
+            <x-_locale  lang="fr"/>
+          </div>
         <form action="{{route('announcements.search')}}" method="GET" class="d-flex" role="search">
           <input name="searched" class="form-control me-2" type="search" placeholder="ricerca annuncio" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Cerca</button>

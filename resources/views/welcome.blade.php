@@ -23,7 +23,7 @@
     <div class="container-fluid bg-video position-absolute top-0 left-0 h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12 d-flex flex-column align-items-center">
-          <h1 class="display-1 text-white " data-aos="zoom-in">WELCOME TO INFINITY CODE</h1>
+          <h1 class="display-1 text-white " data-aos="zoom-in">{{__('ui.welcome')}}</h1>
           <button class="btn-custom " type="button">
             <a class="nav-link" href="{{route('announcements.create')}}">Inserisci Annuncio</a>
           </button>

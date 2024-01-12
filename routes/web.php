@@ -45,3 +45,7 @@ Route::get('/accept/revisor/{user}', [RevisorController::class, 'makeRevisor'])-
 
 //!Ricerca Annuncio
 Route::get('/search/announcement',[PublicController::class,'searchAnnouncements'])->name('announcements.search');
+
+//? Cambio lingua
+
+Route::post('/langauge/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');

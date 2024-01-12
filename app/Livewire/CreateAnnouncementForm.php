@@ -28,27 +28,9 @@ class CreateAnnouncementForm extends Component
 
     
 
-public function announcementStore(){
-    $this->validate();
-    $category= Category::find($this->category);
-    $announcement=$category->announcements()->create([
-        'title'=>$this->title,
-        'body'=>$this->body,
-        'price'=>$this->price,
-
-    ]);
-
-    Auth::user()->announcements()->save($announcement);
-    
-    session()->flash('message','annuncio inserito con successo');
-        $this->reset();
-}
 
 
-public function updated($propertyName){
 
-$this->validateOnly($propertyName);
-}
 
 protected $rules =[
     'title'=> 'required|min:4',
@@ -99,7 +81,12 @@ public function removeImage($key)
     }
 }
 
+
+
+
+
 public function store()
+
 {
     $this->validate();
     $this->announcement = Category::find($this->category)->announcements()->create($this->validate());
@@ -107,15 +94,28 @@ public function store()
         foreach($this->images as $image) {
             $this->announcement->images()->create(['path'=>$image->store('images', 'public')]);
         }
+
     }
+
+     // questo metodo associa l'annuncio all'utente autenticato !
+     $this->announcement->user()->associate(Auth::user());
+    //  dd($this->announcement);
+     // il metodo save invece salva lo stato di questo annuncio nel database 
+     $this->announcement->save();
 
     session()->flash('message', 'Ariticolo inserito con successo, sarà pubblicato dopo la revisione');
     $this->reset();
 }
-public function update($propertyName)
-{
+
+public function updated($propertyName){
+
     $this->validateOnly($propertyName);
-}
+    }
+
+// public function update($propertyName)
+// {
+//     $this->validateOnly($propertyName);
+// }
 
 
 

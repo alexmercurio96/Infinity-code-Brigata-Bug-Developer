@@ -52,7 +52,7 @@
                 <p class="card-text">Prezzo: {{$announcement_to_check->price}}</p>
                 <a href="{{route('categoryShow',['category'=>$announcement_to_check->category])}}" class="my-2 border-top
                     pt-2 border-dark card-link shadow btn btn-success">Categoria: {{$announcement_to_check->category->name}}</a>
-                    <p class="card-footer">Pubblico il: {{$announcement_to_check->created_at->format('d/m/Y')}} - Autore {{ $announcement_to_check->user->name ?? ''}}</p>
+                    <p class="card-footer">Pubblicato il: {{$announcement_to_check->created_at->format('d/m/Y')}} - Autore {{ $announcement_to_check->user->name ?? ''}}</p>
                 </div>
             </div>
         </div>
@@ -72,6 +72,8 @@
                 </form>
             </div>
         </div>
+    </div>
+
         @endif
         
         

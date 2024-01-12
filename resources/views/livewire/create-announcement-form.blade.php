@@ -53,8 +53,8 @@
                         @enderror
                     </div>
                     @if (!empty($images))
-                        <div class="class row">
-                            <div class="class col-12">
+                        <div class=" row">
+                            <div class=" col-12">
             
                                 <p>Photo preview:</p>
                                 <div class="row border-4 border-info rounded py-4">

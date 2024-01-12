@@ -12,7 +12,7 @@
                   <p class="card-text">{{$announcement->price}}</p>
                   <p class="card-text"></p>
                    <a href="{{route('announcements.show', compact('announcement'))}}" class="btn btn-primary">Visualizza</a> 
-                  <a href="" class="btn my-2 border-top pt-2 border-dark card-link shadow btn btn-light">Catagoria:{{$announcement->category->name}}</a>
+                  <a href="" class="btn my-2 border-top pt-2 border-dark card-link shadow btn btn-light">Categoria:{{$announcement->category->name}}</a>
                   <p class="acrd-footer">Pubblicato il: {{$announcement->created_at->format('d/m/Y')}}</p>
                 </div>
               </div>

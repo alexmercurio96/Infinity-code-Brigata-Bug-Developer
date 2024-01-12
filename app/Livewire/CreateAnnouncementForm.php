@@ -92,7 +92,9 @@ public function store()
     $this->announcement = Category::find($this->category)->announcements()->create($this->validate());
     if(count($this->images)){
         foreach($this->images as $image) {
-            $this->announcement->images()->create(['path'=>$image->store('images', 'public')]);
+            // $this->announcement->images()->create(['path'=>$image->store('images', 'public')]);
+            $newFileName = "announcements/{$this->announcement->id}";
+            $newImage = $this->announcement->images()->create(['path'=>$image->store($newFileName, 'public')]);
         }
 
     }

@@ -5,46 +5,40 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Announcement;
+use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
+use App\Livewire\CreateAnnouncementForm;
+
 
 
 
 
 class CreateAnnouncementForm extends Component
 {
+    use WithFileUploads;
+
     public $title;
     public $body;
     public $price;
     public $category;
+    public $temporary_images;
+    public $images =[];
+    public $form_id;
+    public $announcement;
+
     
 
-public function announcementStore(){
-    $this->validate();
-    $category= Category::find($this->category);
-    $announcement=$category->announcements()->create([
-        'title'=>$this->title,
-        'body'=>$this->body,
-        'price'=>$this->price,
-
-    ]);
-
-    Auth::user()->announcements()->save($announcement);
-    
-    session()->flash('message','annuncio inserito con successo');
-        $this->reset();
-}
 
 
-public function updated($propertyName){
 
-$this->validateOnly($propertyName);
-}
 
 protected $rules =[
     'title'=> 'required|min:4',
     'category'=> 'required',
     'body'=> 'required|max:2000',
     'price'=> 'required|decimal:0,2',
+    'images.*'=>'image|max:1024',
+    'temporary_images.*'=>'image|max:1024',
 
 
 
@@ -58,7 +52,72 @@ protected $messages=[
     'price.decimal'=>'Il prezzo deve contenere un numero con al massimo 2 numeri decimali',
     'body.required'=>'Il testo è obbligatorio',
     'price.required'=>'Il prezzo è obbligatorio',
+    'temporary_images.required' => 'L\'immagine è richiesta',
+    'temporary_images.*.image' => 'I file devono essere immagini',
+    'temporary_images.*.max' => 'L\'immagine dev\'essere massimo di 1mb',
+    'images.image' => 'L\'immagine dev\'essere un\'immagine',
+    'images.max' => 'L\'immagine dev\'essere massimo di 1mb',
+
+
+
 ];
+
+public function UpdatedTemporaryImages()
+{
+    if ($this->validate([
+        'temporary_images.*'=>'image|max:1024',
+
+    ])) {
+        foreach ($this->temporary_images as $image) {
+             $this->images[] = $image;
+        }
+    }
+}
+
+public function removeImage($key)
+{
+    if(in_array($key, array_keys($this->images))) {
+        unset($this->images[$key]);
+    }
+}
+
+
+
+
+
+public function store()
+
+{
+    $this->validate();
+    $this->announcement = Category::find($this->category)->announcements()->create($this->validate());
+    if(count($this->images)){
+        foreach($this->images as $image) {
+            $this->announcement->images()->create(['path'=>$image->store('images', 'public')]);
+        }
+
+    }
+
+     // questo metodo associa l'annuncio all'utente autenticato !
+     $this->announcement->user()->associate(Auth::user());
+    //  dd($this->announcement);
+     // il metodo save invece salva lo stato di questo annuncio nel database 
+     $this->announcement->save();
+
+    session()->flash('message', 'Ariticolo inserito con successo, sarà pubblicato dopo la revisione');
+    $this->reset();
+}
+
+public function updated($propertyName){
+
+    $this->validateOnly($propertyName);
+    }
+
+// public function update($propertyName)
+// {
+//     $this->validateOnly($propertyName);
+// }
+
+
 
 
 

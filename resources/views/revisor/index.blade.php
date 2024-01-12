@@ -14,12 +14,18 @@
         <div class="row">
             <div class="col-12">
                 <div id="showCrousel" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
+                  @if (count($announcement_to_check->images))
+                  <div class="carousel-inner">
+                    @foreach($announcement_to_check->images as $image)
+                    <div class="carousel-item @if($loop->first) active @endif">
+                     <img src="{{Storage::url($image->path)}}" class="img-fluid p-3 rounded" alt="...">
+                    </div>
+                    @endforeach
+                  </div>
+                  @else
+                   
                     <div class="carousel-inner">
+                    
                         <div class="carousel-item active">
                             <img class="d-block w-100" src="https://picsum.photos/200" alt="First slide">
                         </div>
@@ -30,6 +36,7 @@
                             <img class="d-block w-100 " src="https://picsum.photos/202" alt="Third slide">
                         </div>
                     </div>
+                    @endif
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
@@ -45,7 +52,7 @@
                 <p class="card-text">Prezzo: {{$announcement_to_check->price}}</p>
                 <a href="{{route('categoryShow',['category'=>$announcement_to_check->category])}}" class="my-2 border-top
                     pt-2 border-dark card-link shadow btn btn-success">Categoria: {{$announcement_to_check->category->name}}</a>
-                    <p class="card-footer">Pubblico il: {{$announcement_to_check->created_at->format('d/m/Y')}} - Autore {{ $announcement_to_check->user->name ?? ''}}</p>
+                    <p class="card-footer">Pubblicato il: {{$announcement_to_check->created_at->format('d/m/Y')}} - Autore {{ $announcement_to_check->user->name ?? ''}}</p>
                 </div>
             </div>
         </div>
@@ -65,6 +72,8 @@
                 </form>
             </div>
         </div>
+    </div>
+
         @endif
         
         

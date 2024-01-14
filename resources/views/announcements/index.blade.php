@@ -5,7 +5,7 @@
     
     <x-masthead
     
-    title='Tutti gli annunci'
+    title="{{__('ui.announcements')}}"
     
     ></x-masthead>
 

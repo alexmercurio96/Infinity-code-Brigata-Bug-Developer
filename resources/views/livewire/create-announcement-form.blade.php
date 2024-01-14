@@ -62,10 +62,10 @@
                                         <div class="col my-3">
                                             <div class="img-preview mx-auto shadow rounded"
                                                 style="background-image: url({{ $image->temporaryUrl() }});">
-                                                <button type="button"
-                                                    class="btn btn-danger shadow d-block text-center mt-2 mx-auto"
-                                                    wire:click="removeImage({{ $key }})">Cancella</button>
                                             </div>
+                                            <button type="button"
+                                                    class="btn btn-danger mt-2"
+                                                    wire:click="removeImage({{ $key }})">Cancella</button>
                                     @endforeach
             
                                 </div>

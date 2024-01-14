@@ -25,10 +25,10 @@
             
         
           @guest
-          <li class="nav-item">
+          <li class="nav-item bg-gradient mx-2">
             <a class="nav-link" href="{{route('login')}}">Accedi</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item bg-gradient ">
             <a class="nav-link" href="{{route('register')}}">Registrati</a>
           </li>
           @endguest

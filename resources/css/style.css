@@ -32,6 +32,7 @@
 :root {
     --body-font           : "Lato", sans-serif;
     --heading-font        : "Jost", sans-serif;
+
 }
 
 html {
@@ -46,7 +47,8 @@ html {
     margin: 0;
     background: url("../img/bg.jpg");
     background-repeat: no-repeat;
-  }
+    background-size: cover; 
+   }
 
 
   .nav-custom{
@@ -174,9 +176,11 @@ html {
 }
 
 .img-preview{
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
   background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
  
 }
 .form-custom{

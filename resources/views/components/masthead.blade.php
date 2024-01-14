@@ -3,7 +3,7 @@
       <video id="video-background" preload muted autoplay loop>
         <source src="{{Storage::url('video.mp4')}}" type="">
       </video>
-      <h1 class="text-body-emphasis">{{$title}}</h1>
+      <h1 class="text-body-emphasis fw-bold">{{$title}}</h1>
       <p class="col-lg-6 mx-auto mb-4">
         This faded back jumbotron is useful for placeholder content. It's also a great way to add a bit of context to a page or section when no content is available and to encourage visitors to take a specific action.
       </p>

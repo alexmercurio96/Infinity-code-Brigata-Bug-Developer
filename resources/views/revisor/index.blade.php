@@ -56,19 +56,19 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-md-6">
+        <div class="row mt-5 mb-5">
+            <div class="col-12 col-md-6 d-flex justify-content-center display-1">
                 <form action="{{route('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
                     @csrf
                     @method('PATCH')
-                    <button type="submit" class="btn btn-succes shadow">Accetta</button>
+                    <button type="submit" class="btn btn-success btn-lg shadow">Accetta</button>
                 </form>
             </div>
-            <div class="col-12 col-md-6 text-end">
+            <div class="col-12 col-md-6 d-flex justify-content-center display-1">
                 <form action="{{route('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
                     @csrf
                     @method('PATCH')
-                    <button type="submit" class="btn btn-succes shadow">Rifiuta</button>
+                    <button type="submit" class="btn btn-danger  btn-lg shadow">Rifiuta</button>
                 </form>
             </div>
         </div>

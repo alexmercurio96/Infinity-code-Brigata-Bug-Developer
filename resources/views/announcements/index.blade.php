@@ -5,7 +5,7 @@
     
     <x-masthead
     
-    title='Tutti gli annunci'
+    title="{{__('ui.announcements')}}"
     
     ></x-masthead>
 
@@ -21,18 +21,18 @@
                       <p class="card-text">{{$announcement->body}}</p>
                       <p class="card-text">{{$announcement->price}}</p>
                       <p class="card-text"></p>
-                       <a href="{{route('announcements.show', compact('announcement'))}}" class="btn btn-primary">Visualizza</a> 
+                       <a href="{{route('announcements.show', compact('announcement'))}}" class="btn btn-primary">{{__('ui.view')}}</a> 
                        <a href="{{route('categoryShow',['category'=>$announcement->category])}}" class="my-2 border-top
-                        pt-2 border-dark card-link shadow btn btn-success">Categoria: {{$announcement->category->name}}</a>
+                        pt-2 border-dark card-link shadow btn btn-success">{{__('ui.category')}}: {{$announcement->category->name}}</a>
                       
-                      <p class="acrd-footer">Pubblicato il: {{$announcement->created_at->format('d/m/Y')}}</p>
+                      <p class="acrd-footer">{{__('ui.published')}}: {{$announcement->created_at->format('d/m/Y')}}</p>
                     </div>
                   </div>
             </div>
             @empty
             <div class="col-12">
               <div class="alert alert-warning py-3 shadow">
-                <p class="lead">Non ci sono annunci per questa ricerca</p>
+                <p class="lead">{{__('ui.noNew')}}</p>
               </div>
             </div>
                 

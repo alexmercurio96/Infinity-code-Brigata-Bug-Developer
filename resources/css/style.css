@@ -103,8 +103,8 @@ html {
 /* CSS */
 .btn-custom {
   all: unset;
-  width: 100px;
-  height: 30px;
+  width: 150px;
+  height: 40px;
   font-size: 16px;
   background: transparent;
   border: none;

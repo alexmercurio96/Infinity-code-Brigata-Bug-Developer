@@ -1,7 +1,7 @@
 <x-layout>
     <x-navbar></x-navbar>
 
-    <x-masthead title='Esplora la Categoria'> {{$category->name}}
+    <x-masthead title="{{__('ui.explore')}}"> {{$category->name}}
     </x-masthead>
 
     <div class="container">
@@ -15,18 +15,18 @@
                       <p class="card-text">{{$announcement->body}}</p>
                       
                       <p class="card-text"></p>
-                      <a href="#" class="btn btn-primary">Visualizza</a>
-                      <a href="" class="btn my-2 border-top pt-2 border-dark card-link shadow btn btn-light">Catagoria:{{$announcement->category->name}}</a>
-                      <p class="acrd-footer">Pubblicato il: {{$announcement->created_at->format('d/m/Y')}}
-                     - Autore: {{$announcement->user->name ?? ''}}
+                      <a href="#" class="btn btn-primary">{{__('ui.view')}}</a>
+                      <a href="" class="btn my-2 border-top pt-2 border-dark card-link shadow btn btn-light">{{__('ui.category')}}:{{$announcement->category->name}}</a>
+                      <p class="acrd-footer">{{__('ui.published')}}: {{$announcement->created_at->format('d/m/Y')}}
+                     - {{__('ui.author')}}: {{$announcement->user->name ?? ''}}
                     </p>
                     </div>
                   </div>
             </div>
             @empty
             <div class="col-12">
-                <p class=""> Non sono presenti annunci per questa categoria</p>
-                <p class=""> Pubblica uno: <a href="{{route('announcements.create')}}" class="btn btn-success shadow">Nuovo Annuncio</a></p>
+                <p class=""> {{__('ui.noAnnouncements')}}</p>
+                <p class="">{{__('ui.create')}}: <a href="{{route('announcements.create')}}" class="btn btn-success shadow">{{__('ui.new')}}</a></p>
             </div>
         
 

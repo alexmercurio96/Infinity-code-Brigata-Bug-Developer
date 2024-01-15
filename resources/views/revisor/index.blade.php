@@ -5,7 +5,7 @@
     
     <x-masthead
     
-    title="{{$announcement_to_check ? 'Ecco l annuncio da revisionare' : 'non ci sono annunci da revisionare'}}"
+    title="{{$announcement_to_check ? __('ui.toReview') : __('ui.noNew') }}"
     
     ></x-masthead>
     
@@ -39,20 +39,20 @@
                     @endif
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
+                        <span class="sr-only"></span>
                     </a>
                     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
+                        <span class="sr-only"></span>
                         
                     </a>
                 </div>
-                <h5 class="card-title">Titolo: {{$announcement_to_check->title}}</h5>
-                <p class="card-text">Descrizione: {{$announcement_to_check->body}}</p>
-                <p class="card-text">Prezzo: {{$announcement_to_check->price}}</p>
+                <h5 class="card-title">{{__('ui.title')}}: {{$announcement_to_check->title}}</h5>
+                <p class="card-text">{{__('ui.description')}}: {{$announcement_to_check->body}}</p>
+                <p class="card-text">{{__('ui.price')}}: {{$announcement_to_check->price}}</p>
                 <a href="{{route('categoryShow',['category'=>$announcement_to_check->category])}}" class="my-2 border-top
-                    pt-2 border-dark card-link shadow btn btn-success">Categoria: {{$announcement_to_check->category->name}}</a>
-                    <p class="card-footer">Pubblicato il: {{$announcement_to_check->created_at->format('d/m/Y')}} - Autore {{ $announcement_to_check->user->name ?? ''}}</p>
+                    pt-2 border-dark card-link shadow btn btn-success">{{__('ui.category')}}: {{$announcement_to_check->category->name}}</a>
+                    <p class="card-footer">{{__('ui.published')}}: {{$announcement_to_check->created_at->format('d/m/Y')}} - {{__('ui.author')}} {{ $announcement_to_check->user->name ?? ''}}</p>
                 </div>
             </div>
         </div>
@@ -61,14 +61,14 @@
                 <form action="{{route('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
                     @csrf
                     @method('PATCH')
-                    <button type="submit" class="btn btn-succes shadow">Accetta</button>
+                    <button type="submit" class="btn btn-succes shadow">{{__('ui.accept')}}</button>
                 </form>
             </div>
             <div class="col-12 col-md-6 text-end">
                 <form action="{{route('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
                     @csrf
                     @method('PATCH')
-                    <button type="submit" class="btn btn-succes shadow">Rifiuta</button>
+                    <button type="submit" class="btn btn-succes shadow">{{__('ui.refuse')}}</button>
                 </form>
             </div>
         </div>

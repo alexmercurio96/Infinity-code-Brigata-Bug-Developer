@@ -8,7 +8,7 @@
         This faded back jumbotron is useful for placeholder content. It's also a great way to add a bit of context to a page or section when no content is available and to encourage visitors to take a specific action.
       </p>
       <button class="btn-custom " type="button">
-        <a class="nav-link" href="{{route('announcements.create')}}">Inserisci Annuncio</a>
+        <a class="nav-link" href="{{route('announcements.create')}}">{{__('ui.create')}}</a>
       </button>
     </div>
   </div>

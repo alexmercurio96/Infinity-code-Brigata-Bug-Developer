@@ -1,7 +1,7 @@
 <x-layout>
     <x-navbar></x-navbar>
     <x-masthead
-    title='Dettaglio Annuncio'
+    title="{{__('ui.detail')}}"
     
     ></x-masthead>
     <div class="container">
@@ -34,12 +34,12 @@
 
                     </a>
                   </div>
-                  <h5 class="card-title">Titolo: {{$announcement->title}}</h5>
-                  <p class="card-text">Descrizione: {{$announcement->body}}</p>
-                  <p class="card-text">Prezzo: {{$announcement->price}}</p>
+                  <h5 class="card-title">{{__('ui.title')}}: {{$announcement->title}}</h5>
+                  <p class="card-text">{{__('ui.description')}}: {{$announcement->body}}</p>
+                  <p class="card-text">{{__('ui.price')}}: {{$announcement->price}}</p>
                   <a href="{{route('categoryShow',['category'=>$announcement->category])}}" class="my-2 border-top
-                    pt-2 border-dark card-link shadow btn btn-success">Categoria: {{$announcement->category->name}}</a>
-                    <p class="card-footer">Pubblico il: {{$announcement->created_at->format('d/m/Y')}} - Autore {{ $announcement->user->name ?? ''}}</p>
+                    pt-2 border-dark card-link shadow btn btn-success">{{__('ui.category')}}: {{$announcement->category->name}}</a>
+                    <p class="card-footer">{{__('ui.published')}} {{$announcement->created_at->format('d/m/Y')}} - {{__('ui.author')}} {{ $announcement->user->name ?? ''}}</p>
                   
             </div>
         </div>

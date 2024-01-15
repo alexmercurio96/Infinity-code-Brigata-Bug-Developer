@@ -1,5 +1,5 @@
 <div>
-    @if ($errors->any())
+    {{-- @if ($errors->any())
         <div class="alert bg-danger" data-bs-dismiss="alert">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -7,7 +7,7 @@
                 @endforeach
             </ul>
         </div>
-    @endif
+    @endif --}}
     @if (session('message'))
         <div class="alert alert-success">
             {{ session('message') }}<button type="button" class="btn-close mx-2" data-bs-dismiss="alert"
@@ -22,31 +22,44 @@
                         <label for="title" class="form-label">Titolo</label>
                         <input type="text" wire:model.blur='title'
                             class="form-control @error('title') is-invalid @enderror "id="title">
+                            @error('title')
+                            <p class="text-small text-danger">{{ $message }}</p>
+                            @enderror
                     </div>
             
                     <div class="mb-3">
-                        <select class="form-select" wire:model.defer="category" aria-label="Default select example">
+                        <select class="form-select @error('category') is-invalid @enderror" id="category"  wire:model.blur="category" aria-label="Default select example">
                             <option selected>Seleziona categoria</option>
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
+                            
                         </select>
+                        @error('category')
+                            <p class="text-small text-danger">{{ $message }}</p>
+                            @enderror
                     </div>
             
                     <div class="mb-3">
                         <label for="body" class="form-label">Testo</label>
                         <textarea type="text" wire:model.blur='body' class="form-control @error('body') is-invalid @enderror" cols="30"
-                            rows="10"id="body"></textarea>
+                            rows="10"id="body">
+                            </textarea>
+                            @error('body')
+                            <p class="text-small text-danger">{{ $message }}</p>
+                            @enderror
             
                     </div>
                     <div class="mb-3">
                         <label for="price" class="form-label">Prezzo</label>
                         <input type="decimal" wire:model.live='price' class="form-control @error('price') is-invalid @enderror"
-                            id="price">
+                            id="price"  @error('price')
+                            <p class="text-small text-danger">{{ $message }}</p>
+                            @enderror
                     </div>
             
                     <div class="class mb-3">
-                        <input wire:model="temporary_images" type="file" name="images" multiple
+                        <input wire:model.blur="temporary_images" type="file" name="images" multiple
                             class="form-control shadow @error('temporary_image')is-invalid @enderror" placeholder="Img" />
                         @error('temporary_images.*')
                             <p class="text-danger mt-2">{{ $message }}</p>

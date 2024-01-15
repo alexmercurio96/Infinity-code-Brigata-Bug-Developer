@@ -47,19 +47,19 @@ protected $rules =[
 ];
 
 protected $messages=[
-    'title.required'=>'Il titolo è obbligatorio',
+    'title.required'=>'Il titolo è obbligatorio!',
     'title.min'=>'Il titolo deve essere minimo di 4 caratteri',
     'body.max'=>'Il testo deve essere massimo di 2000 caratteri',
+    'body.required'=>'Il testo è obbligatorio!',
     'price.decimal'=>'Il prezzo deve contenere un numero',
     'price.decimal'=>'Il prezzo deve contenere un numero con al massimo 2 numeri decimali',
-    'body.required'=>'Il testo è obbligatorio',
-    'price.required'=>'Il prezzo è obbligatorio',
+    'price.required'=>'Il prezzo è obbligatorio!',
     'temporary_images.required' => 'L\'immagine è richiesta',
     'temporary_images.*.image' => 'I file devono essere immagini',
     'temporary_images.*.max' => 'L\'immagine dev\'essere massimo di 1mb',
     'images.image' => 'L\'immagine dev\'essere un\'immagine',
     'images.max' => 'L\'immagine dev\'essere massimo di 1mb',
-
+    'category.required'=>'Seleziona una categoria!'
 
 
 ];

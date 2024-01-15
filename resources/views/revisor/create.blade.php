@@ -36,7 +36,7 @@
     </div>
          
         
-        <button type="submit" class="btn btn-warning m-5">Diventa Revisore</button> 
+        <button type="submit" class="btn btn-primary m-5">Diventa Revisore</button> 
       </form>
     </div>
   </div>

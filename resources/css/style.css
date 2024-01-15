@@ -197,3 +197,13 @@ html {
 .freccia{
   color: black;
 }
+
+.carousel-container{
+  /* height: 400px; */
+  background-color: #131814;
+}
+
+.img-carousel{
+  height: 500px;
+  object-fit: cover;
+}

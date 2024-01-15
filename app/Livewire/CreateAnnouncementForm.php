@@ -8,6 +8,7 @@ use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use App\Livewire\CreateAnnouncementForm;
 
 
@@ -26,7 +27,7 @@ class CreateAnnouncementForm extends Component
     public $images =[];
     public $form_id;
     public $announcement;
-
+    
     
 
 

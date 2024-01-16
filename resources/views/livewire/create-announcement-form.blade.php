@@ -75,7 +75,7 @@
                                         <div class="col my-3">
                                             <div class="img-preview mx-auto shadow rounded"
                                                 style="background-image: url({{ $image->temporaryUrl() }});">
-                                                
+                                          
                                             </div>
                                             <button type="button"
                                                     class="btn btn-danger mt-2"

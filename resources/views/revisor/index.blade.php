@@ -108,7 +108,7 @@
           
       </div>
       </div>
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-6 d-flex  flex-column justify-content-center align-items-center">
     
           <h5 class="card-title display-4 mb-2 fw-bold">{{ $announcement_to_check->title }}</h5>
           <p class="card-text fw-bold">Descrizione: {{ $announcement_to_check->body }}</p>
@@ -116,7 +116,7 @@
           <form action="{{route('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
             @csrf
             @method('PATCH')
-            <button type="submit" class="btn btn-success btn-lg shadow">Accetta</button>
+            <button type="submit" class="btn btn-success btn-lg shadow my-5">Accetta</button>
         </form>
     
    

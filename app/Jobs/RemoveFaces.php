@@ -49,7 +49,7 @@ class RemoveFaces implements ShouldQueue
                 $vertices =$face->getBoundingPoly()->getVertices();
 
                 $bounds = [];
-                foreach ($vertices as vertex){
+                foreach ($vertices as $vertex){
                     $bounds[] = [$vertex->getX(), $vertex->getY()];
 
                 }
@@ -58,7 +58,7 @@ class RemoveFaces implements ShouldQueue
 
                 $image =SpatieImage::load($srcPath);
 
-                $image->watermark(base_path('resources/img/smile'))
+                $image->watermark(base_path('resources/img/smile'));
 
             }
 

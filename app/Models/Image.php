@@ -13,6 +13,10 @@ class Image extends Model
     use HasFactory;
     protected $fillable = ['path'];
 
+    protected $casts =[
+        'labels' => 'array'
+    ];
+
     public function annoucement()
     {
         return $this->belongsTo(Announcement::class);

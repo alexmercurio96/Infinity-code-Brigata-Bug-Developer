@@ -38,6 +38,29 @@
               <span class="visually-hidden">Next</span>
           </button>
       
+          <div class="col-12 col-md-6 border-end">
+            <h5 class="tc-accent mt-3">Tags</h5>
+            <div class="p-2">
+              @if ($image->labels)
+               @foreach ($image->labels as $label)
+               <p class="d-inline">{{$label}},</p>
+               @endforeach
+              @endif
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card-body">
+              <h5 class="tc-accent">Revisione Immagini</h5>
+              <p>Adulti: <span class="{{$image->adult}}"></span></p>
+              <p>Truffe: <span class="{{$image->spoof}}"></span></p>
+              <p>Medicina: <span class="{{$image->medical}}"></span></p>
+              <p>Violenza: <span class="{{$image->violence}}"></span></p>
+              <p>Razzismo: <span class="{{$image->racy}}"></span></p>
+            </div>
+          </div>
+
+
           
       </div>
       </div>

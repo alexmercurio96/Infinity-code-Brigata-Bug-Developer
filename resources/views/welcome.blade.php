@@ -25,7 +25,7 @@
         <div class="col-12 d-flex flex-column align-items-center">
           <h1 class="display-1 text-white " data-aos="zoom-in">{{__('ui.welcome')}}</h1>
           <button class="btn-custom " type="button">
-            <a class="nav-link" href="{{route('announcements.create')}}">Inserisci Annuncio</a>
+            <a class="nav-link" href="{{route('announcements.create')}}">{{__('ui.create')}}</a>
           </button>
 
         </div>

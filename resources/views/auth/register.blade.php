@@ -9,22 +9,22 @@
                 <form method="POST" action="{{route('register')}}">
                     @csrf
                     <div class="mb-3">
-                      <label for="email" class="form-label">Email </label>
+                      <label for="email" class="form-label">E-mail</label>
                       <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
-                      <label for="name" class="form-label">Nome</label>
+                      <label for="name" class="form-label">{{__('ui.name')}}</label>
                       <input type="text" name="name" class="form-control" id="name">
                     </div>
                     <div class="mb-3">
-                      <label for="password" class="form-label">Password</label>
+                      <label for="password" class="form-label">{{__('ui.password')}}</label>
                       <input type="password" name="password" class="form-control" id="password">
                     </div>
                     <div class="mb-3">
-                      <label for="password_confirmation" class="form-label">Conferma Password</label>
+                      <label for="password_confirmation" class="form-label">{{__('ui.confirm')}}</label>
                       <input type="password" name="password_confirmation" class="form-control" id="password_confirmation">
                     </div>
-                    <button type="submit" class=" btn btn-primary ">Registrati</button>
+                    <button type="submit" class=" btn btn-primary ">{{__('ui.sign')}}</button>
                   </form>
             </div>
         </div>

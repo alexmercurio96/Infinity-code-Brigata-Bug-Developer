@@ -19,8 +19,7 @@ return new class extends Migration
         });
 
         $categories=[
-            'Antivirus', 'Produttività',' Grafica', 'IDE', 'VideoGame', 'Sistemi 
-            Operativi',' App iOS', 'Gestionali', 'Corsi', 'Altre App' 
+            'Antivirus', 'Produttività','Grafica', 'IDE', 'VideoGame','Sistemi Operativi','App iOS', 'Gestionali', 'Corsi', 'Altre App' 
             
         ];
         foreach ($categories as $category){

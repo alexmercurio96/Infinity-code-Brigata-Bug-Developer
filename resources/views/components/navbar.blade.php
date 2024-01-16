@@ -10,14 +10,15 @@
             <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Home</a>
           </li>
       <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">Tutti gli Annunci</a>
+            <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">{{__('ui.all')}}</a>
           </li>
          
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" data-bs-toggle="dropdown" aria-expanded="false" role="button">Categorie</a>
+              <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" data-bs-toggle="dropdown" aria-expanded="false" role="button">{{__('ui.categories')}}</a>
                         <ul  class="dropdown-menu" aria-lbavelledby="catagriesDropdown">
               @foreach ($categories as $category)
-              <li> <a class="dropdown-item" href="{{route('categoryShow', compact('category'))}}">{{($category->name)}}</a></li> 
+              <li><a class="dropdown-item" href="{{route('categoryShow', compact('category'))}}">
+                {{__("ui.$category->name")}}</a></li> 
             {{-- <li> <hr class="dropdown-divider mt-0 mb-0"></li> --}}
                @endforeach
             </ul>
@@ -25,20 +26,20 @@
             
         
           @guest
-          <li class="nav-item bg-gradient mx-2">
-            <a class="nav-link" href="{{route('login')}}">Accedi</a>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('login')}}">{{__('ui.login')}}</a>
           </li>
-          <li class="nav-item bg-gradient ">
-            <a class="nav-link" href="{{route('register')}}">Registrati</a>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('register')}}">{{__('ui.sign')}}</a>
           </li>
           @endguest
           @auth
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{route('announcements.create')}}">Nuovo Annuncio</a>
+            <a class="nav-link active" aria-current="page" href="{{route('announcements.create')}}">{{__('ui.new')}}</a>
           </li>
 @if(Auth::user()->is_revisor)
           <li class="nav-item">
-            <a class="nav-link btn btn-outline-success btn-sm position-relative" aria-current="page" href="{{route('revisor.index')}}">Zona revisore
+            <a class="nav-link btn btn-outline-success btn-sm position-relative" aria-current="page" href="{{route('revisor.index')}}">{{__('ui.reviewer')}}
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 {{App\Models\Announcement::toBeRevisionedCount()}}
                 <span class="visually-hidden">messaggi non letti</span>
@@ -51,8 +52,8 @@
               {{Auth::user()->name}}
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
+              {{-- <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li> --}}
               <li><hr class="dropdown-divider"></li>
               <form action="{{route('logout')}}" method="POST">
                 @csrf
@@ -72,8 +73,8 @@
             <x-_locale  lang="fr"/>
           </div>
         <form action="{{route('announcements.search')}}" method="GET" class="d-flex" role="search">
-          <input name="searched" class="form-control me-2" type="search" placeholder="ricerca annuncio" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Cerca</button>
+          <input name="searched" class="form-control me-2" type="search" placeholder="{{__('ui.placeholder')}}" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">{{__('ui.search')}}</button>
         </form>
       </div>
     </div>

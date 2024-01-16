@@ -5,7 +5,7 @@
     
     <x-masthead
     
-    title='Creazione annuncio'
+    title="{{__('ui.create')}}"
     
     ></x-masthead>
 <div class="container">

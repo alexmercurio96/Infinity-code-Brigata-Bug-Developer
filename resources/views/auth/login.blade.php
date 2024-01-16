@@ -9,18 +9,18 @@
                 <form method="POST" action="{{route('login')}}">
                     @csrf
                     <div class="mb-3">
-                      <label for="email" class="form-label">Email </label>
+                      <label for="email" class="form-label">E-mail </label>
                       <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
-                      <label for="password" class="form-label">Password</label>
+                      <label for="password" class="form-label">{{__('ui.password')}}</label>
                       <input type="password" name="password" class="form-control" id="password">
                     </div>
                     <div class="mb-3">
-                        <label for="remember" class="form-check-label">Ricordati di me</label>
+                        <label for="remember" class="form-check-label">{{__('ui.remember')}}</label>
                         <input type="checkbox" name="remember" class="form-check-label" id="password">
                       </div>
-                    <button type="submit" class="btn btn-primary">Accedi</button>
+                    <button type="submit" class="btn btn-primary">{{__('ui.login')}}</button>
                   </form>
             </div>
         </div>

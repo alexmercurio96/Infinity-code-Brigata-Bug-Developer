@@ -8,7 +8,7 @@
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum, voluptatum quisquam id modi nemo laudantium exercitationem illo animi itaque fuga quo nostrum ullam eveniet, ipsa repellendus aut voluptatem consequatur quaerat.
       </p>
       <button class="btn-custom " type="button">
-        <a class="nav-link" href="{{route('announcements.create')}}">Inserisci Annuncio</a>
+        <a class="nav-link" href="{{route('announcements.create')}}">{{__('ui.create')}}</a>
       </button>
     </div>
   </div>

@@ -1,7 +1,7 @@
 <x-layout>
     <x-navbar></x-navbar>
     <x-masthead
-    title='Dettaglio Annuncio'
+    title="{{__('ui.detail')}}"
     
     ></x-masthead>
     
@@ -39,15 +39,21 @@
       </div>
       <div class="col-12 col-md-6 d-flex  flex-column justify-content-center align-items-center">
     
-          <h5 class="card-title display-4 mb-2 fw-bold">{{ $announcement->title }}</h5>
+          {{-- <h5 class="card-title display-4 mb-2 fw-bold">{{ $announcement->title }}</h5>
           <p class="card-text fw-bold">Descrizione: {{ $announcement->body }}</p>
           <p class="card-text">Prezzo: {{ $announcement->price }} €</p>
 
-          <a href="" class="btn my-2 border-top pt-2 border-dark card-link shadow btn btn-success">Categoria:{{$announcement->category->name}}</a>
-                  <p class="acrd-footer">Pubblicato il: {{$announcement->created_at->format('d/m/Y')}}</p>
-          
-
-      </div>
+                    </a>
+                  </div> --}}
+                  <h5 class="card-title">Titolo: {{$announcement->title}}</h5>
+                  <p class="card-text">Descrizione: {{$announcement->body}}</p>
+                  <p class="card-text">Prezzo: {{$announcement->price}}</p>
+                  <a href="{{route('categoryShow',['category'=>$announcement->category])}}" class="my-2 border-top
+                    pt-2 border-dark card-link shadow btn btn-success">Categoria: {{$announcement->category->name}}</a>
+                    <p class="card-footer">Pubblico il: {{$announcement->created_at->format('d/m/Y')}} - Autore {{ $announcement->user->name ?? ''}}</p>
+                  
+            </div>
+        </div>
     </div>
   </div>
  

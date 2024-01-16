@@ -4,9 +4,11 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Category;
+use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use App\Livewire\CreateAnnouncementForm;
 
 
@@ -25,7 +27,7 @@ class CreateAnnouncementForm extends Component
     public $images =[];
     public $form_id;
     public $announcement;
-
+    
     
 
 
@@ -45,19 +47,19 @@ protected $rules =[
 ];
 
 protected $messages=[
-    'title.required'=>'Il titolo è obbligatorio',
+    'title.required'=>'Il titolo è obbligatorio!',
     'title.min'=>'Il titolo deve essere minimo di 4 caratteri',
     'body.max'=>'Il testo deve essere massimo di 2000 caratteri',
+    'body.required'=>'Il testo è obbligatorio!',
     'price.decimal'=>'Il prezzo deve contenere un numero',
     'price.decimal'=>'Il prezzo deve contenere un numero con al massimo 2 numeri decimali',
-    'body.required'=>'Il testo è obbligatorio',
-    'price.required'=>'Il prezzo è obbligatorio',
+    'price.required'=>'Il prezzo è obbligatorio!',
     'temporary_images.required' => 'L\'immagine è richiesta',
     'temporary_images.*.image' => 'I file devono essere immagini',
     'temporary_images.*.max' => 'L\'immagine dev\'essere massimo di 1mb',
     'images.image' => 'L\'immagine dev\'essere un\'immagine',
     'images.max' => 'L\'immagine dev\'essere massimo di 1mb',
-
+    'category.required'=>'Seleziona una categoria!'
 
 
 ];
@@ -95,8 +97,11 @@ public function store()
             // $this->announcement->images()->create(['path'=>$image->store('images', 'public')]);
             $newFileName = "announcements/{$this->announcement->id}";
             $newImage = $this->announcement->images()->create(['path'=>$image->store($newFileName, 'public')]);
-        }
 
+            dispatch(new ResizeImage($newImage->path , 400 , 300));
+        }
+          
+        File::deleteDirectory(storage_path('/app/livewire-tmp'));
     }
 
      // questo metodo associa l'annuncio all'utente autenticato !

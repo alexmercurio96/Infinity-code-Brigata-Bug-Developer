@@ -32,6 +32,7 @@
 :root {
     --body-font           : "Lato", sans-serif;
     --heading-font        : "Jost", sans-serif;
+
 }
 
 html {
@@ -46,7 +47,8 @@ html {
     margin: 0;
     background: url("../img/bg.jpg");
     background-repeat: no-repeat;
-  }
+    background-size: cover; 
+   }
 
 
   .nav-custom{
@@ -174,12 +176,34 @@ html {
 }
 
 .img-preview{
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
   background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
  
 }
 .form-custom{
   color: rgb(255, 255, 255);
   box-shadow: 0px 10px 20px 8px #302f2f
+}
+.carousel-custom{
+  height: 300px;
+  width: 600px;
+ 
+
+}
+
+.freccia{
+  color: black;
+}
+
+.carousel-container{
+  /* height: 400px; */
+  background-color: #131814;
+}
+
+.img-carousel{
+  height: 500px;
+  object-fit: cover;
 }

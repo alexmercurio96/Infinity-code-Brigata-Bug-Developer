@@ -27,7 +27,7 @@
                   @endforeach
               @else
                   <div class="carousel-item active">
-                      <img class="d-block w-100 img-carousel" src="https://picsum.photos/400/200" alt="Placeholder Image">
+                      <img class="d-block w-100 img-carousel" src="{{Storage::url('images/default.jpg')}}" alt="Placeholder Image">
                   </div>
               @endif
           </div>

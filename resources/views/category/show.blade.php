@@ -15,8 +15,8 @@
                       <p class="card-text">{{$announcement->body}}</p>
                       
                       <p class="card-text"></p>
-                      <a href="#" class="btn btn-primary">{{__('ui.view')}}</a>
-                      <a href="" class="btn my-2 border-top pt-2 border-dark card-link shadow btn btn-light">{{__('ui.category')}}:{{$announcement->category->name}}</a>
+                      {{-- <a href="#" class="btn btn-primary">{{__('ui.view')}}</a> --}}
+                      <a href="" class="btn my-2 border-top pt-2 border-dark card-link shadow btn btn-light">{{__('ui.category')}}: {{$announcement->category->name}}</a>
                       <p class="acrd-footer">{{__('ui.published')}}: {{$announcement->created_at->format('d/m/Y')}}
                      - {{__('ui.author')}}: {{$announcement->user->name ?? ''}}
                     </p>

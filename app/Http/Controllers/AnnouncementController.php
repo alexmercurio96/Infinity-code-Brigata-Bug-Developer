@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 class AnnouncementController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth')->except('index', 'show');
+        $this->middleware('auth')->except( 'show');
     }  
     public function createAnnouncement() {
         return view('announcements.create');

@@ -34,6 +34,6 @@
     
 
     
-    <x-footer></x-footer>
+    <x-footer class="fixed-bottom"></x-footer>
 
 </x-layout>    

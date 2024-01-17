@@ -12,10 +12,10 @@
                     <img src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path):'/images/default.jpg'}} "card-img-top  alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{$announcement->title}}</h5>
-                      <p class="card-text">{{$announcement->body}}</p>
+                      <p class="card-text text-truncate">{{$announcement->body}}</p>
                       
                       <p class="card-text"></p>
-                      {{-- <a href="#" class="btn btn-primary">{{__('ui.view')}}</a> --}}
+                      <a href="{{route('announcements.show', compact('announcement'))}}" class="btn btn-primary">{{__('ui.view')}}</a> 
                       <a href="" class="btn my-2 border-top pt-2 border-dark card-link shadow btn btn-light">{{__('ui.category')}}: {{$announcement->category->name}}</a>
                       <p class="acrd-footer">{{__('ui.published')}}: {{$announcement->created_at->format('d/m/Y')}}
                      - {{__('ui.author')}}: {{$announcement->user->name ?? ''}}

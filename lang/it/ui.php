@@ -47,7 +47,8 @@ return[
     "App iOS"=>"App iOS",
     "Gestionali"=>"Programmi Gestionali",
     "Corsi"=>"Corsi",
-    "Altre App"=>"Altre App"
+    "Altre App"=>"Altre App",
+    "subtitle"=>"Sblocchiamo il Potenziale del Codice, All'Infinito e Oltre!"
 
     
 

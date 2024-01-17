@@ -24,6 +24,7 @@
       <div class="row h-100 align-items-center">
         <div class="col-12 d-flex flex-column align-items-center">
           <h1 class="display-1 text-white " data-aos="zoom-in">{{__('ui.welcome')}}</h1>
+          <h2 class="text-white h2-custom text-center">{{__('ui.subtitle')}}</h2>
           <button class="btn-custom " type="button">
             <a class="nav-link" href="{{route('announcements.create')}}">{{__('ui.create')}}</a>
           </button>

@@ -4,12 +4,15 @@ namespace App\Jobs;
 
 use App\Models\Image;
 use Illuminate\Bus\Queueable;
+use Spatie\Image\Manipulations;
 use Illuminate\Queue\SerializesModels;
+use Spatie\Image\Image as SpatieImage;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
-use Google\Cloud\Vision\V1\Client\ImageAnnotatorClient;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
+
 
 class RemoveFaces implements ShouldQueue
 {
@@ -35,14 +38,16 @@ class RemoveFaces implements ShouldQueue
             if(!$i){
                 return;
             }
-            $image = file_get_contents(storage_path('app/public/' . $i->path));
+            $srcPath = storage_path('app/public/' . $i->path);
+            $image = file_get_contents($srcPath);
+
     
             //impostare la variabile di ambiente GOOGLE_APPLICATION_CREDENTIALS al path del credentials file
     
             putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credential.json'));
 
             $imageAnnotator = new ImageAnnotatorClient();
-            $response = $imageAnnotator->faceDelection($image);
+            $response = $imageAnnotator->faceDetection($image);
             $faces =$response->getFaceAnnotations();
 
             foreach($faces as $face){
@@ -58,9 +63,17 @@ class RemoveFaces implements ShouldQueue
 
                 $image =SpatieImage::load($srcPath);
 
-                $image->watermark(base_path('resources/img/smile'));
+                $image->watermark(base_path('resources/img/smile.png'))
+                      ->watermarkPosition('top-left')
+                      ->watermarkPadding($bounds[0][0], $bounds[0][1])
+                      ->watermarkWidth($w, Manipulations::UNIT_PIXELS)
+                      ->watermarkHeight($h, Manipulations::UNIT_PIXELS)
+                      ->watermarkFit(Manipulations::FIT_STRETCH);
+
+                $image->save($srcPath);      
 
             }
+            $imageAnnotator->close();
 
             
     }

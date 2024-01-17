@@ -63,18 +63,18 @@
           </li>
           @endauth
         </ul>
-          <div class=" mx-2">
+          <div class=" me-3">
             <x-_locale lang="it"/>
           </div>
-          <div class="mx-2">
+          <div class="me-3">
             <x-_locale  lang="en"/>
           </div>
-          <div class="mx-2">
+          <div class="me-5">
             <x-_locale  lang="fr"/>
           </div>
         <form action="{{route('announcements.search')}}" method="GET" class="d-flex" role="search">
-          <input name="searched" class="form-control me-2" type="search" placeholder="{{__('ui.placeholder')}}" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">{{__('ui.search')}}</button>
+          <input name="searched" class="form-control mx-3" type="search" placeholder="{{__('ui.placeholder')}}" aria-label="Search">
+          <button class="btn btn-outline-light" type="submit">{{__('ui.search')}}</button>
         </form>
       </div>
     </div>

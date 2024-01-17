@@ -10,11 +10,17 @@
                     @csrf
                     <div class="mb-3">
                       <label for="email" class="form-label">E-mail </label>
-                      <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
+                      <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" aria-describedby="emailHelp">
+                      @error('email')
+                      <p class="text-small text-danger">campo obbligatorio</p>
+                      @enderror
                     </div>
                     <div class="mb-3">
                       <label for="password" class="form-label">{{__('ui.password')}}</label>
-                      <input type="password" name="password" class="form-control" id="password">
+                      <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="email" id="password">
+                      @error('email')
+                      <p class="text-small text-danger">campo obbligatorio</p>
+                      @enderror
                     </div>
                     <div class="mb-3">
                         <label for="remember" class="form-check-label">{{__('ui.remember')}}</label>

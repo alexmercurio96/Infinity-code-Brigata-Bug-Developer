@@ -33,7 +33,7 @@
             @empty
             <div class="col-12">
               <div class="alert alert-warning py-3 shadow">
-                <p class="lead">{{__('ui.noNew')}}</p>
+                <p class="lead">{{__('ui.noAnnouncements')}}</p>
               </div>
             </div>
                 

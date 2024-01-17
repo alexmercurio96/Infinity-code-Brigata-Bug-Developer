@@ -44,6 +44,7 @@ protected $rules =[
     'price'=> 'required|decimal:0,2',
     'images.*'=>'image|max:1024',
     'temporary_images.*'=>'image|max:1024',
+    
 
 
 

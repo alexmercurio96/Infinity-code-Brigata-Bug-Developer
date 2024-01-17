@@ -17,13 +17,13 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
-                <form class="p-4  my-5 rounded-4 text-center bg-dark text-white form-custom" wire:submit="store">
+                <form class="p-4  my-5 rounded-3 text-center  text-white form-custom" wire:submit="store">
                     <div class="mb-3">
                         <label for="title" class="form-label">{{__('ui.title')}}</label>
                         <input type="text" wire:model.blur='title'
                             class="form-control @error('title') is-invalid @enderror "id="title">
                             @error('title')
-                            <p class="text-small text-danger">{{ $message }}</p>
+                            <p class="text-small text-danger bg-white rounded-2 my-1">{{ $message }}</p>
                             @enderror
                     </div>
             
@@ -36,7 +36,7 @@
                             
                         </select>
                         @error('category')
-                            <p class="text-small text-danger">{{ $message }}</p>
+                            <p class="text-small text-danger  bg-white rounded-2 my-1">{{ $message }}</p>
                             @enderror
                     </div>
             
@@ -46,7 +46,7 @@
                             rows="10"id="body">
                             </textarea>
                             @error('body')
-                            <p class="text-small text-danger">{{ $message }}</p>
+                            <p class="text-small text-danger  bg-white rounded-2 my-1">{{ $message }}</p>
                             @enderror
             
                     </div>
@@ -54,7 +54,7 @@
                         <label for="price" class="form-label">{{__('ui.price')}}</label>
                         <input type="decimal" wire:model.live='price' class="form-control @error('price') is-invalid @enderror"
                             id="price"  @error('price')
-                            <p class="text-small text-danger">{{ $message }}</p>
+                            <p class="text-small text-danger  bg-white rounded-2 my-1">{{ $message }}</p>
                             @enderror
                     </div>
             
@@ -62,7 +62,7 @@
                         <input wire:model.blur="temporary_images" type="file" name="images" multiple
                             class="form-control shadow @error('temporary_image')is-invalid @enderror" placeholder="Img" />
                         @error('temporary_images.*')
-                            <p class="text-danger mt-2">{{ $message }}</p>
+                            <p class="text-danger mt-2  bg-white rounded-2 my-1">{{ $message }}</p>
                         @enderror
                     </div>
                     @if (!empty($images))

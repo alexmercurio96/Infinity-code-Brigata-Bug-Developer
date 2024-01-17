@@ -1,13 +1,13 @@
-<div class="container">
-    <footer class="py-3 my-4">
+<div class="container ">
+    <footer class="py-3 my-4 footer-custom bg-dark rounded-3 mt-3  ">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
-        <a href="{{route('revisor.create')}}" class="btn btn-primary">{{__('ui.work')}}</a> 
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-light ">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-light ">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-light ">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-light ">About</a></li>
       </ul>
-      <p class="text-center text-body-secondary">© 2023 Company, Inc</p>
+      <a href="{{route('revisor.create')}}" class="btn btn-primary my-2">{{__('ui.work')}}</a> 
+      <p class="text-center">© 2024 Brigata Bug Developer, E-presto</p>
     </footer>
   </div>

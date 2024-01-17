@@ -47,7 +47,7 @@
                   </div> --}}
                   <h5 class="card-title">{{__('ui.title')}}: {{$announcement->title}}</h5>
                   <p class="card-text">{{__('ui.description')}}: {{$announcement->body}}</p>
-                  <p class="card-text">{{__('ui.price')}}: {{$announcement->price}}</p>
+                  <p class="card-text">{{__('ui.price')}}: {{$announcement->price}} €</p>
                   <a href="{{route('categoryShow',['category'=>$announcement->category])}}" class="my-2 border-top
                     pt-2 border-dark card-link shadow btn btn-success">{{__('ui.category')}}: {{$announcement->category->name}}</a>
                     <p class="card-footer">{{__('ui.published')}}: {{$announcement->created_at->format('d/m/Y')}} - {{__('ui.author')}}: {{ $announcement->user->name ?? ''}}</p>

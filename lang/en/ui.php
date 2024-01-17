@@ -45,6 +45,7 @@ return[
     "Gestionali"=>"Management Programs",
     "Corsi"=>"Courses",
     "Altre App"=>"Other Apps",
+    "subtitle"=>"Let's discover the Code potential, to the Infinity and Beyond!"
 
     
 

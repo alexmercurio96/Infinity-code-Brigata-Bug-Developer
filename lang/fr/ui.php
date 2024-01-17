@@ -48,7 +48,8 @@ return[
     " App iOS"=>"App iOS",
     "Gestionali"=>"Programmes de gestion",
     "Corsi"=>"Corses",
-    "Altre App"=>"Autres applications"
+    "Altre App"=>"Autres applications",
+    "subtitle"=>"Libérons le potentiel du Code, à l'Infini et Au-delà!",
 
 
 

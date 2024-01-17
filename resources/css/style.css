@@ -237,3 +237,9 @@ html {
   height: 200px;
 }
 
+
+.h2-custom{
+  font-weight: lighter;
+  margin-bottom: 20px;
+
+}

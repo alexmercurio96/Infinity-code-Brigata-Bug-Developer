@@ -1,6 +1,1 @@
-git pull
-se ci sono merge risolverli
-composer install
-controllare se il file .gitignore ha la stringa /storage/*.index
-Lanciare questo comando: php artisan scout:import "App\Models\Announcement"
-Per controllo lanciare il comando :php artisan scout:status
+Questo è il nostro progetto  realizzato come prova finale per ottenere l'attestato di full stack web developer, è un e-commerce che vende prodotti tecnologici in cui un utente può sia scrivere il proprio annuncio e sia vedere quelli già disponibili, in più l'utente può anche richiedere di diventare un revisore attraverso un pulsante lavora con noi che si tratta di accettare o rifiutare un annuncio creato da un utente esterno tutto questo ovviamente, se l'utente ha effettuato l'accesso all'interno del nostro sito .Abbiamo anche implementato la multi lingua dove un utente può sceglieri di navigare nel sito con la lingua da lui scelta .
